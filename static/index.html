@@ -16,6 +16,13 @@
       });
   });
   $(function() {
+    $( "#21" )
+      .button()
+      .click(function( event ) {
+        $("#output").load("/toggle/21");
+      });
+  });
+  $(function() {
     $( "#22" )
       .button()
       .click(function( event ) {
@@ -39,6 +46,7 @@ If not for this text, this page would be blank.
 
 <BR>
 <button id="17">17</button><BR>
+<button id="21">21</button><BR>
 <button id="22">22</button><BR>
 
 
