@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+
+
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#17" )
+      .button()
+      .click(function( event ) {
+        $("#output").load("/toggle/17");
+      });
+  });
+  $(function() {
+    $( "#22" )
+      .button()
+      .click(function( event ) {
+        $("#output").load("/toggle/22");
+      });
+  });
+  </script>
+
+
+
+
+
+
+
+
+  <TITLE>Testing Page</TITLE
+</HEAD>
+<BODY>
+
+If not for this text, this page would be blank.
+
+<BR>
+<button id="17">17</button><BR>
+<button id="22">22</button><BR>
+
+
+<div id="output">Output will show up here.</div>
+
+
+</BODY>
+</HTML>
