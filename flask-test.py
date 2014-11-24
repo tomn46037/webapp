@@ -10,13 +10,19 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
+GPIO.setup( 4, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
 GPIO.setup(21, GPIO.OUT)
 GPIO.setup(22, GPIO.OUT)
+GPIO.setup(18, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
 
+GPIO.output( 4, False);
 GPIO.output(17, False);
 GPIO.output(21, False);
 GPIO.output(22, False);
+GPIO.output(18, False);
+GPIO.output(23, False);
 
 
 
@@ -70,6 +76,25 @@ def toggle( pin ):
        { pin : GPIO.input(pin) }
     )
 
+@app.route('/level/<int:percent>')
+def level( percent ):
+    # GPIO.output(pin, not GPIO.input(pin))
+    return str(percent) + "%"
+       
+
+@app.route('/status')
+def return_status():
+    return jsonify(
+        {
+            4 : GPIO.input(4),
+            17 : GPIO.input(17),
+            21 : GPIO.input(21),
+            22 : GPIO.input(22),
+            18 : GPIO.input(18),
+            23 : GPIO.input(23),
+        }
+	
+    )
 
 
 

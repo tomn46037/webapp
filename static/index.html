@@ -9,6 +9,13 @@
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <script>
   $(function() {
+    $( "#4" )
+      .button()
+      .click(function( event ) {
+        $("#output").load("/toggle/4");
+      });
+  });
+  $(function() {
     $( "#17" )
       .button()
       .click(function( event ) {
@@ -29,6 +36,32 @@
         $("#output").load("/toggle/22");
       });
   });
+  $(function() {
+    $( "#18" )
+      .button()
+      .click(function( event ) {
+        $("#output").load("/toggle/18");
+      });
+  });
+  $(function() {
+    $( "#23" )
+      .button()
+      .click(function( event ) {
+        $("#output").load("/toggle/23");
+      });
+  });
+  $(function() {
+    $( "#level" )
+      .slider( { 
+		value:1, 
+		min:10, 
+		max:100,
+		change:function(event, ui) {
+			$("#output").load("/status" );
+			$("#level-output").load("/level/" + ui.value );
+		}
+	 });
+  });
   </script>
 
 
@@ -45,12 +78,20 @@
 If not for this text, this page would be blank.
 
 <BR>
+<button id="4">4</button><BR>
 <button id="17">17</button><BR>
 <button id="21">21</button><BR>
 <button id="22">22</button><BR>
+<button id="18">18</button><BR>
+<button id="23">23</button><BR>
 
 
 <div id="output">Output will show up here.</div>
+
+<div style="width: 100%; overflow: hidden;">
+    <div id="level" style="width: 600px; float: left;"></div>
+    <div id="level-output" style="margin-left: 620px;">Unset/div>
+</div>
 
 
 </BODY>
